@@ -1,0 +1,102 @@
+#page {
+  display: grid;
+  width: 80%;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    ". footer";
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 1fr 4fr;
+  gap: 30px;
+  margin: 1vw 5vw 1vw 7vw;
+  font-family: Roboto, sans-serif;
+  line-height: 1.7;
+  font-size: 1.2em;
+}
+
+body {
+  background-color: rgb(243, 245, 241);
+}
+
+header {
+  grid-area: header;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 0;
+}
+
+li {
+  margin-left: 2vmin;
+}
+
+.breadcrumbs {
+  list-style-type: none;
+  border-bottom: 1px solid black;
+  margin-left: 0;
+}
+
+.breadcrumb {
+  display: inline;
+  margin-left: 0;
+}
+
+.breadcrumb a::after {
+  display: inline-block;
+  content: " > ";
+  padding: 0 0 0 5px;
+}
+
+.sublist {
+  padding-left: 20px;
+  list-style-type: circle;
+}
+
+nav {
+  padding-bottom: 2vmin;
+}
+
+main {
+  grid-area: content;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+.fade {
+  font-style: italic;
+  color: gray;
+}
+
+h1,
+h2,
+h4 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+footer {
+  grid-area: footer;
+  padding: 5px;
+  text-align: right;
+}
+
+@media (max-width: 500px) {
+  #page {
+    display: grid;
+    width: 80%;
+    grid-template-areas:
+      "header header"
+      "sidebar content"
+      ". footer";
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 2fr 3fr;
+    gap: 30px;
+    margin: 1vw 5vw 1vw 7vw;
+    font-family: Roboto, sans-serif;
+    line-height: 1.9;
+    font-size: 0.8em;
+  }
+}
