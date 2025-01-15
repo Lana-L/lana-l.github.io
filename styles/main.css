@@ -53,6 +53,11 @@ li {
   list-style-type: circle;
 }
 
+code {
+  font-family: monospace;
+  background-color: rgb(236, 236, 253);
+  color: rgb(150, 28, 109);
+}
 nav {
   padding-bottom: 2vmin;
 }
