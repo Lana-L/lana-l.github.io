@@ -1,0 +1,137 @@
+#page {
+  display: grid;
+  width: 80%;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 1fr 4fr;
+  gap: 30px;
+  margin: 1vw 5vw 1vw 7vw;
+  font-family: Roboto, sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+body {
+  background-color: rgb(243, 245, 241);
+}
+
+header {
+  grid-area: header;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 0;
+}
+
+li {
+  margin-left: 2vmin;
+}
+
+.breadcrumbs {
+  list-style-type: none;
+  border-bottom: 1px solid black;
+  margin-left: 0;
+}
+
+.breadcrumb {
+  display: inline;
+  margin-left: 0;
+}
+
+.breadcrumb a::after {
+  display: inline-block;
+  content: " > ";
+  padding: 0 0 0 5px;
+}
+
+.sublist {
+  padding-left: 20px;
+  list-style-type: circle;
+}
+
+code {
+  font-family: monospace;
+  background-color: rgb(236, 236, 253);
+  color: rgb(150, 28, 109);
+}
+nav {
+  padding-bottom: 2vmin;
+}
+
+main {
+  grid-area: content;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+.fade {
+  font-style: italic;
+  color: gray;
+}
+
+h1,
+h2,
+h4 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+footer {
+  grid-area: footer;
+  padding: 5px;
+  text-align: right;
+}
+
+/* Tables on the projects page made with https://www.htmltables.io/ */
+.table_component {
+  overflow: auto;
+  width: 100%;
+}
+
+.table_component table {
+  border: 0.5px ridge #0d6faf;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
+}
+
+.table_component th {
+  border: 0.5px ridge #0d6faf;
+  background-color: #0d6faf;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.table_component td {
+  border: 0.5px ridge #0d6faf;
+  color: #000000;
+  padding: 5px;
+  width: fit-content;
+}
+
+/* Tables on the projects page made with https://www.htmltables.io/ */
+
+@media (max-width: 500px) {
+  #page {
+    display: grid;
+    width: 80%;
+    grid-template-areas:
+      "header header"
+      "sidebar content"
+      "footer footer";
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 2fr 3fr;
+    gap: 30px;
+    margin: 1vw 5vw 1vw 7vw;
+    font-family: Roboto, sans-serif;
+    line-height: 1.9;
+    font-size: 0.8em;
+  }
+}
