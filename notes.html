@@ -27,76 +27,68 @@
           </ul>
         </nav>
       </aside>
-     <main>
-      <h3>Notes</h3>
-      <div class="table_component" role="region" tabindex="0">
-        <p>This is where I document useful things I find or write, so I don't lose them later.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Summary</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="./multer.html">Multer setup</a></td>
-              <td>
-                <p>Multer is a node library to let end users upload files (eg, photos of their cat). Unfortunately, a lot of the documentation online does not match our specific tech stack, so I documented how to use it for what we learned in Dev Academy bootcamp.</p>
-              </td>
-            </tr>
-            <tr>
-              <td><a href="./DOM-interactions/">DOM Interactions</a></td>
-              <td>
-                <p>This was a simple follow-along task that had us learn to interact with the page.</p>
-              </td>
-            </tr>
-            <tr>
-              <td><a href="./tic-tac-toe">Tic-Tac-Toe</a></td>
-              <td>
-                <p>How much simpler can such a game be? Turns out not that easy when you have to code each little bit of it.</p>
-                <p>Here we learned how to catch clicks, display objects with a click, play sounds, and keep score. I also spent a lot of time styling this (and then carried over the same styling to the Mole project) - using CSS Grid Areas made a lot of sense after using them here. I would like to come back to this one and add an "against the computer" mode. </p>
-              </td>
-            </tr>
-            <tr>
-              <td><a href="./javascript-carnival/dress-the-clown/dress-the-clown.html">Dress the Clown</a></td>
-              <td>
-                <p>This is a simple 'game' where you use the keyboard arrow keys to interact with the image. A 'save this image' button is also included, but this was pre-built for us. Main learning here was how to catch keypress events.</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="./javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html">Inflate the Unicorn</a>
-              </td>
-              <td>
-                <p>This is a simple 'game' where you click on the unicorn to inflate its balloon horn. Main learning here was how to catch onclick events (which we already learned in Tic-Tac-Toe), and to cycle through images to catch the correct clicks.</p>
-                <p>A simpler solution may have been to give an ID to each individual unicorn, but I wanted to get this done without changing the HTML that was provided.</p>
-                <p>Although simple to code, several hours were spent finding the right sounds on the various free sound websites.</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="./javascript-carnival/whack-a-mole/whack-a-mole.html">Whack-a-Mole</a>
-              </td>
-              <td>
-                <p>This started off as another carnival game, but became so much more. What was initially provided was a pre-styled board and an empty JS file. I've used the same logic for displaying the mole as what I learned in Tic-Tac-Toe - traverse through all the table cells and place the image in a random cell. The cell clicked event is also the same as what was used in Tic-Tac-Toe. The time
-                  attack mode took a lot of learning about setInterval and setTimeout functions. Adding the time attack mode, the timer countdown, and leaderboard were stretch goals.</p>
-                <p>I am particularly proud of the leaderboard and utilised some of the learning from the Javascript Cafe - using objects to store data and displaying them with innerHTML.</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="./Rock-Paper-Scissors/" style="white-space: nowrap;">Rock Paper Scissors</a>
-              </td>
-              </td>
-              <td>
-                <p>This was a challenge from The Odin Project. Has no styling, but I felt pretty proud of implementing all the score-keeping. Should come back to it and make it prettier.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
+      <main>
+        <h3>Notes</h3>
+        <div class="table_component" role="region" tabindex="0">
+          <p>This is where I document useful things I find or write, so I don't lose them later.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="./multer.html">Multer setup</a></td>
+                <td>
+                  <p>
+                    Multer is a node library to let end users upload files (eg, photos of their cat). Unfortunately, a lot of the documentation online does not match our specific tech stack, so I
+                    documented how to use it for the stack we learned in the Dev Academy bootcamp.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://curlconverter.com/node-superagent/" target="_blank">Curl to superagent translator</a></td>
+                <td>
+                  <p>Often API documentation provides curl commands but it is not always clear how to translate those to superagent functions. This website decodes them very easily.</p>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://cosc203.cspages.otago.ac.nz/labs/" target="_blank" rel="noreferrer">Otago Uni Labs</a></td>
+                <td>
+                  <p>Useful assignments to try from Otago Uni Comp Sci department. Good project ideas.</p>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="https://tableconvert.com/excel-to-jsonlines" target="_blank">Excel to JSON converter</a></td>
+                <td>
+                  <p>When creating db seeds, they are arrays of objects, but it can be tedious to type them all in. This simplifies copying from spreadsheets.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://devhints.io/knex" target="_blank">Knex cheatsheet</a>
+                </td>
+                <td>
+                  <p>
+                    Although it appears this query builder is on its way out, this is what we were taught in the Dev Academy and it's quite simple and intuitive to use. This cheat sheet documents the
+                    most common functions and is easier to use than the official docs.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://react.dev/learn/you-might-not-need-an-effect" target="_blank">You might not need an Effect</a>
+                </td>
+                <td>
+                  <p>Seems like a lot of the time people fall to including useEffect in their React components, but it is frequently not necessary. This doc from the React team explains why.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
     </div>
   </body>
 </html>
