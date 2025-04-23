@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lana L Github Page</title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header>
+        <nav class="breadcrumbs">
+          <ul>
+            <li class="breadcrumb"><a href="/index.html">Home</a></li>
+            <li class="breadcrumb"><a href="/notes.html">Notes</a></li>
+            <li class="breadcrumb">Multer</li>
+          </ul>
+        </nav>
+      </header>
+      <aside>
+        <br />
+        <nav>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/notes.html">Notes to Self</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <h2>Multer with React and Superagent</h2>
+        <p>Multer is an npm package that allows users to upload files to your designated storage location.</p>
+        <h3>Summary</h3>
+        <p>
+          While the package is easy to install, the guidelines on the internet at the time of this writing (Mar 2025) have the following limitations that may be confusing for newer developers who
+          learned only one way of doing things:
+        </p>
+        <ul>
+          <li>commonJS vs ES modules</li>
+          <li>axios or fetch vs superagent and tanstack react query and express router</li>
+          <li>form that allows only file upload vs form that also has other text fields</li>
+        </ul>
+        <h3>Install</h3>
+        <p>Multer is an npm package, so it is installed with a terminal command:</p>
+        <pre><code>npm install --save multer</code></pre>
+        <h3>Setup server</h3>
+        <p>In the server routes file (the specific file with all the put/get commands, not the overall server file that defines the api routes), at the top:</p>
+        <pre><code>import multer from 'multer'
+
+const storage = multer.diskStorage({ 
+  destination: (req, file, cb) => { 
+    cb(null, './public/images')
+  }, 
+  filename: (req, file, cb) => { 
+    cb(null, `${Date.now()}-${file.originalname}`)
+  }, 
+})
+
+const upload = multer({ storage: storage })</code></pre>
+
+        <h5>Some more details about the words used above:</h5>
+        <ul>
+          <li><code>import</code> always goes to the top of the file.</li>
+          <li>The reason <code>storage</code> and <code>upload</code> are at the top of the file is so that any other functions can use them.</li>
+          <li><code>destination</code> tells the computer where the files will be stored when the user uploads them.</li>
+          <li>
+            <code>filename</code> tells the computer how to name the file. If this is not specified, the uploaded file will be all numbers and have no extension, so then your front end won't be able
+            to display it, if it's an image, for example.
+          </li>
+          <li><code>Date.now()</code> just prefixes the file with the date/time the image was uploaded.</li>
+        </ul>
+        <p>Other functions that can be added to this storage function are controls on <a href="https://www.npmjs.com/package/multer" target="_blank">file type and file size</a>.</p>
+        <p>However, they can also be all omitted and the entire block just replaced with</p>
+        <pre><code>const upload = multer({ dest: './public/images/' })</code></pre>
+        <p>
+          Then, in the actual update function, we include the above function as middleware. The <code>'uploaded_file'</code> is the name you give the form field in the client component. If you change
+          this name here, make sure to use the same name in the client form.
+        </p>
+
+        <p>
+          You see we check if the file was sent, this is part of the req (similar to how body is, but is a separate component of req in Express). Express servers receive data from the client side
+          through the req object, and so far the most common ones we've used are req.params and req.body. req.file is the one that can send whole files.
+          <a href="https://expressjs.com/en/api.html#req.app" target="_blank">There are many other req properties</a>.
+        </p>
+        <pre><code>router.put('/:id', upload.single('uploaded_file'), async (req, res) => { 
+let pet
+try { 
+  if (req.file) 
+    pet = await db.updatePet(Number(req.params.id), { 
+      ...req.body, 
+      imgUrl: `/images/${req.file.filename}`, 
+    })
+    else pet = await db.updatePet(Number(req.params.id), req.body)
+    
+  if (!pet) res.status(404).json({ error: 'No such pet' })
+  else res.status(200).json(pet)
+} catch (error) { 
+  if (error instanceof Error) { 
+    console.error(error.message)
+  } else { 
+    console.error('unknown error while updating Pet')
+  } res.status(500).json({ error: 'Failed to update Pet' })
+ } 
+})</code></pre>
+
+        <h3>Setup client form</h3>
+        <p>This is quite tricky if you have a form with many fields and one of those fields happens to be an option to upload a file.</p>
+        <p>The reason this is tricky is because without uploading a file, a simple react form is sent to the server via the API as a JSON. But a file cannot be sent as a JSON.</p>
+        <p>So we have to change the entire form setup.</p>
+        <p>Your form will already have the normal onChange fields and the associated handleChange functions. This does not change.</p>
+        <p>The file upload bit is added by just having <code>&lt;input type="file"/&gt;</code> in the form - this will straight away give you the functionality to click and add a file from your computer.</p>
+        <p>We also need to hold this file in state. It may be easier to have it all in one function, but we decided to hold it in two different ones:</p>
+        <pre><code>const [formState, setFormState] = useState(pet)
+
+function handleFileChange(evt: React.ChangeEvent<HTMLInputElement>) { 
+  if (evt.target.files) 
+    setFormState({ ...formState, file: evt.target.files[0] })
+} 
+
+function handleChange(evt: React.ChangeEvent<HTMLInputElement>) { 
+  const { name, value } = evt.target
+  setFormState((prev) => ({ ...prev, [name]: value }))
+}</code></pre>
+<p>So it's still the same form state, but the file is being handled separately, with the other
+    values being retained with the shallow copy via the spread operator: <code>...prev</code>. </p>
+<p>So far so good.</p>
+<p>Now the tricky part.</p>
+<p>As I said before, we cannot send the file via JSON. So we have to convert all
+    our form fields to <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank">FormData</a>. </p>
+    <p>So before we had a seemingly simple mutation function call that accepted all form fields as they were:</p>
+    <pre><code>function handleSubmit(evt: React.FormEvent<HTMLFormElement>) { 
+  evt.preventDefault() 
+
+  updatePetMutation.mutate({ 
+    id: Number(id), 
+    ownerId: ownerId, 
+    name: formState.name, 
+    imgUrl: formState.imgUrl, 
+  })
+}</code></pre>
+      <p>And now we have to change the entire set of fields
+      to use FormData. Then we append each item to the new formData object. <strong>However</strong>, objects of FormData accept <em>only</em> strings or blobs. They do not like numbers or booleans, which is why you'll
+      see below those being cast into String().</p>
+      <pre><code>async function handleSubmit(evt: React.FormEvent<HTMLFormElement>) { 
+  evt.preventDefault()
+
+  const formData = new FormData()
+
+  formData.append('id', String(id))
+  formData.append('ownerId', pet.ownerId)
+  formData.append('name', formState.name)
+
+  if (formState.file) formData.append('uploaded_file', formState.file)
+  else formData.append('imgUrl', formState.imgUrl)
+
+  updatePetMutation.mutate(formData)
+} </code></pre>
+<p>In our case, the pet may already
+        have an image with a URL saved in the db, so we first check if it exists and if not we send the file, otherwise we continue with the URL that was already there.</p>
+        <p>In the form itself (in the
+        return part of the component), we also have to add the encryption tag just as it is written here and make sure the submit function is on the form, <strong>not</strong> on the button onClick:</p>
+        <pre><code>&lt;form enctype="multipart/form-data" onSubmit="{handleSubmit}"&gt;&lt;/form&gt;</code></pre>
+        <h3>Setup client mutation</h3>
+        <p>Just a minor change here to keep TypeScript happy - instead of your custom type, it should be of type FormData.</p>
+        <pre><code>const queryClient = useQueryClient()
+
+const updatePetMutation = useMutation({ 
+  mutationFn: (pet: FormData) => updatePet(Number(id), pet), 
+  onSuccess: async () => { 
+    queryClient.invalidateQueries({ queryKey: ['updatePet', Number(id)] })
+    setFormVisible(!formVisible)
+  }, 
+})</code></pre>
+        <h3>Setup client API</h3>
+        <p>No major changes here, just change the custom type to the FormData type.</p>
+        <pre><code>export async function updatePet(id: number, pet: FormData) { 
+  const response = await request.put(`/api/v1/pets/${id}`).send(pet)
+  return response.body as PetData
+}</code></pre>
+        <h3>Fin</h3>
+        <p>If all goes well, you should be able to change the fields of
+          your forms and see the uploaded file in your public folder after the user hits submit. Verify it for yourself by refreshing the view of your database.</p>
+      </main>
+    </div>
+  </body>
+</html>

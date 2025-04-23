@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lana L Github Page</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects</title>
-</head>
-
-<body>
-  <div id="page">
-    <header>
-      <nav class="breadcrumbs">
-        <ul>
-          <li class="breadcrumb"><a href="/index.html">Home</a></li>
-          <li class="breadcrumb">Projects</li>
-        </ul>
-      </nav>
-    </header>
-    <aside>
-      <br />
-      <nav>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-           <li><a href="/notes.html">Notes to Self</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main>
-      <h3>Projects</h3>
+  <body>
+    <div id="page">
+      <header>
+        <nav class="breadcrumbs">
+          <ul>
+            <li class="breadcrumb"><a href="/index.html">Home</a></li>
+            <li class="breadcrumb">Notes</li>
+          </ul>
+        </nav>
+      </header>
+      <aside>
+        <br />
+        <nav>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/notes.html">Notes to Self</a></li>
+          </ul>
+        </nav>
+      </aside>
+     <main>
+      <h3>Notes</h3>
       <div class="table_component" role="region" tabindex="0">
+        <p>This is where I document useful things I find or write, so I don't lose them later.</p>
         <table>
           <thead>
             <tr>
-              <th>Live</th>
-              <th>Code</th>
+              <th>Name</th>
               <th>Summary</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><a href="./javascript-cafe/">Javascript Cafe</a></td>
-              <td><a href=" https://github.com/Lana-L/javascript-cafe"><img src="github-mark.png" style="width: 2vw" /></a></td>
+              <td><a href="./multer.html">Multer setup</a></td>
               <td>
-                <p>This was a fun project that taught us to use objects and dynamically populate information on the page. The stretch goals of having a restock button was particularly fun to implement. Other features include: in-session 'database' of stock and business cash, ability to respond when out of stock, and background music. </p>
-                <p>I would still like to come back to this and implement further stretch goals, such as the customer having or not having enough money, customer asking for a refund, transaction history, and also some better styling.</p>
+                <p>Multer is a node library to let end users upload files (eg, photos of their cat). Unfortunately, a lot of the documentation online does not match our specific tech stack, so I documented how to use it for what we learned in Dev Academy bootcamp.</p>
               </td>
             </tr>
             <tr>
               <td><a href="./DOM-interactions/">DOM Interactions</a></td>
-              <td><a href="https://github.com/Lana-L/DOM-interactions"><img src="github-mark.png" style="width: 2vw" /></a></td>
               <td>
                 <p>This was a simple follow-along task that had us learn to interact with the page.</p>
               </td>
             </tr>
             <tr>
               <td><a href="./tic-tac-toe">Tic-Tac-Toe</a></td>
-              <td><a href="https://github.com/Lana-L/tic-tac-toe"><img src="github-mark.png" style="width: 2vw" /></td>
               <td>
                 <p>How much simpler can such a game be? Turns out not that easy when you have to code each little bit of it.</p>
                 <p>Here we learned how to catch clicks, display objects with a click, play sounds, and keep score. I also spent a lot of time styling this (and then carried over the same styling to the Mole project) - using CSS Grid Areas made a lot of sense after using them here. I would like to come back to this one and add an "against the computer" mode. </p>
@@ -65,7 +60,6 @@
             </tr>
             <tr>
               <td><a href="./javascript-carnival/dress-the-clown/dress-the-clown.html">Dress the Clown</a></td>
-              <td><a href="https://github.com/Lana-L/javascript-carnival/tree/main/dress-the-clown"><img src="github-mark.png" style="width: 2vw" /></td>
               <td>
                 <p>This is a simple 'game' where you use the keyboard arrow keys to interact with the image. A 'save this image' button is also included, but this was pre-built for us. Main learning here was how to catch keypress events.</p>
               </td>
@@ -74,7 +68,6 @@
               <td>
                 <a href="./javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html">Inflate the Unicorn</a>
               </td>
-              <td><a href="https://github.com/Lana-L/javascript-carnival/tree/main/inflate-the-unicorn"><img src="github-mark.png" style="width: 2vw" /></a></td>
               <td>
                 <p>This is a simple 'game' where you click on the unicorn to inflate its balloon horn. Main learning here was how to catch onclick events (which we already learned in Tic-Tac-Toe), and to cycle through images to catch the correct clicks.</p>
                 <p>A simpler solution may have been to give an ID to each individual unicorn, but I wanted to get this done without changing the HTML that was provided.</p>
@@ -85,7 +78,6 @@
               <td>
                 <a href="./javascript-carnival/whack-a-mole/whack-a-mole.html">Whack-a-Mole</a>
               </td>
-              <td><a href="https://github.com/Lana-L/javascript-carnival/tree/main/whack-a-mole"><img src="github-mark.png" style="width: 2vw" /></a></td>
               <td>
                 <p>This started off as another carnival game, but became so much more. What was initially provided was a pre-styled board and an empty JS file. I've used the same logic for displaying the mole as what I learned in Tic-Tac-Toe - traverse through all the table cells and place the image in a random cell. The cell clicked event is also the same as what was used in Tic-Tac-Toe. The time
                   attack mode took a lot of learning about setInterval and setTimeout functions. Adding the time attack mode, the timer countdown, and leaderboard were stretch goals.</p>
@@ -96,7 +88,6 @@
               <td>
                 <a href="./Rock-Paper-Scissors/" style="white-space: nowrap;">Rock Paper Scissors</a>
               </td>
-              <td><a href=" https://github.com/Lana-L/Rock-Paper-Scissors"><img src="github-mark.png" style="width: 2vw" /></a>
               </td>
               <td>
                 <p>This was a challenge from The Odin Project. Has no styling, but I felt pretty proud of implementing all the score-keeping. Should come back to it and make it prettier.</p>
@@ -106,7 +97,6 @@
         </table>
       </div>
     </main>
-  </div>
-</body>
-
+    </div>
+  </body>
 </html>
