@@ -1,240 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="styles/main.css" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects</title>
-</head>
+  <body>
+    <div id="page">
+      <header>
+        <nav class="breadcrumbs">
+          <ul>
+            <li class="breadcrumb"><a href="/index.html">Home</a></li>
+            <li class="breadcrumb">Projects</li>
+          </ul>
+        </nav>
+      </header>
+      <aside>
+        <br />
+        <nav>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/notes.html">Notes to Self</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <h3>Projects</h3>
+        <p>Some of the repos may be private, but if you want to discuss any of the code, just let me know.</p>
+        <p>Listed in the order of most complicated to least complicated.</p>
 
-<body>
-  <div id="page">
-    <header>
-      <nav class="breadcrumbs">
-        <ul>
-          <li class="breadcrumb"><a href="/index.html">Home</a></li>
-          <li class="breadcrumb">Projects</li>
-        </ul>
-      </nav>
-    </header>
-    <aside>
-      <br />
-      <nav>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/notes.html">Notes to Self</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main>
-      <h3>Projects</h3>
-      <p>Some of the repos may be private, but if you want to discuss any of the code, just let me know.</p>
-      <p>Listed in the order of most complicated to least complicated.</p>
-      <div class="table_component" role="region" tabindex="0">
-        <table>
-          <thead>
-            <tr>
-              <th>Links</th>
-              <th>Tools</th>
-              <th>Summary</th>
-              <th>To do?</th>
-            </tr>
-          </thead>
-          <tbody>
+        <h4>Independent</h4>
+        <div class="table_component" role="region" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Links</th>
+                <th>Tools</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p><a href="https://jat.borb.nz/" target="_blank">Job Applications Tracker</a></p>
+                  <a href="https://github.com/Lana-L/job-applications-tracker" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>TypeScript, HTML, CSS, React, Node.js, Express, SQLite, Mantine UI, Nivo charts, Auth0, deployed to Dokku on a Digital Ocean droplet</td>
+                <td>
+                  <p>
+                    Web application. Started as a small project to help me track my own job search, ended up as a full fledged applications available for everyone. Database, applications tracking,
+                    status updates, demo mode with sample data, real data after authentication, visualisations with Sankey graphs and a rejections waterfall.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><a href="https://www.reddit.com/r/S3ven_D1als/" target="_blank">S3ven D1als</a></p>
+                  <img src="github-mark.png" style="width: 1vw" />
+                </td>
+                <td>GameMaker, GML, TypeScript, HTML, CSS, Redis, Node.js, Express, deployed to Devvit (Reddit games)</td>
+                <td>
+                  <p>
+                    A deceptively simple drop and match puzzle game, inspired by Drop7, with a clock theme. All art and game logic were made in GameMaker, Reddit integrations were built in Devvit
+                    TS/Express, and user data is stored in Redis. Submitted for the <a href="https://devpost.com/software/s3ven-d1als" target="_blank">Devpost Reddit GameMaker hackathon 2026</a>.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><a href="./lines-game/" target="_blank">Lines Game</a></p>
+                  <a href="https://github.com/Lana-L/lines-game" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>JavaScript, HTML, CSS, deployed to Github pages</td>
+                <td>
+                  <p>
+                    A match puzzle game, inspired by the Lines game from the '90s. All game logic is in JavaScript, art is dynamically generated using CSS. See
+                    <a href="https://github.com/Lana-L/lines-game/blob/main/README.md" target="_blank">Readme</a> for detailed functionality.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><a href="https://lana-l.github.io/aoc2024/" target="_blank">Advent of Code 2024</a></p>
+                  <a href="https://github.com/Lana-L/aoc2024" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>Javascript, HTML, deployed to Github Pages</td>
+                <td>
+                  <p>
+                    This is one of the Advent of Code challenges. I solved the first two days of the 2024 edition. I built it in JS, so that anyone can add their own input and get an answer.
+                    Absolutely no styling.
+                  </p>
+                </td>
+              </tr>
 
+              <tr>
+                <td>
+                  <p><a href="https://aoc2022.vercel.app/" target="_blank">Advent of Code 2022</a></p>
+                  <a href="https://github.com/Lana-L/aoc2022" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>Svelte, TypeScript, deployed to Vercel</td>
+                <td>
+                  <p>This is one of the Advent of Code challenges. I solved the first six days of the 2022 edition. I built it in Svelte, so that anyone can add their own input and get an answer.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>Course-Related</h4>
+        <div class="table_component" role="region" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Links</th>
+                <th>Tools</th>
+                <th>Summary</th>
+                <th>Course</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p>Take It Away Ernie</p>
+                  <a href="https://github.com/tohora-2025/take-it-away-ernie" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>React, Express, SQLite, Knex, Superagent, Tanstack React Query, TypeScript, plain CSS</td>
+                <td>
+                  <p>This was a five day group project. I built the journey planner including all its frontend and backend functions, as well as the database seeds, and the footsteps interactions.</p>
+                </td>
+                <td>Dev Academy Bootcamp</td>
+              </tr>
 
+              <tr>
+                <td>
+                  <p>Library Information System</p>
+                  <a href="https://github.com/Lana-L/LIS" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>C++, Qt Creator, bCrypt, SQLite</td>
+                <td>
+                  <p>
+                    This was a pair project when I was studying at Yoobee in 2022. Standalone Windows application that mimics a library system (the one with books, not a coding library). See
+                    <a href="https://github.com/Lana-L/LIS/blob/main/README.md" target="_blank">Readme</a> for detailed functionality.
+                  </p>
+                </td>
+                <td>Yoobee</td>
+              </tr>
 
-            <tr>
-              <td>
-                <p>Take It Away Ernie</a></p> <a href="https://github.com/tohora-2025/take-it-away-ernie" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>React, Express, SQLite, Knex, Superagent, Tanstack React Query, TypeScript, plain CSS
-              </td>
-              <td>
-                <p>This was a five day group project. I built the journey planner including all its frontend and backend functions, as well as the database seeds, and the footsteps interactions.</p>
-              </td>
-              <td></td>
-            </tr>
+              <tr>
+                <td>
+                  <p><a href="https://birds-of-nz.borb.nz/" target="_blank">Birds of Aotearoa</a></p>
+                  <a href="https://github.com/tohora-2025/my-fullstack-collection/tree/lana" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>React, Express, SQLite, Knex, Superagent, Tanstack React Query, TypeScript, Tailwind CSS</td>
+                <td>
+                  <p>Full stack, solo project, data and images sourced from a Otago Uni project page</p>
+                </td>
+                <td>Dev Academy Bootcamp</td>
+              </tr>
 
-                        <tr>
-              <td>
-                <p>Library Information System</a></p> <a href="https://github.com/Lana-L/LIS" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>C++, Qt Creator, bCrypt, SQLite
-              </td>
-              <td>
-                <p>This was a pair project when I was studying at Yoobee in 2022. Standalone Windows application that mimics a library system (the one with books, not a coding library). See Github readme for detailed functionality.</p>
-              </td>
-              <td></td>
-            </tr>
+              <tr>
+                <td>
+                  <p>LL Cool J Fan Club</p>
+                  <a href="https://github.com/tohora-2025/ll-cool-j" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>React, Express, SQLite, Knex, Superagent, Tanstack React Query, TypeScript, Tailwind CSS</td>
+                <td>
+                  <p>This was a one-day group project. I built all the database functions and backend routes, as well as the frontend join form that uses some of those functions.</p>
+                </td>
+                <td>Dev Academy Bootcamp</td>
+              </tr>
 
-            <tr>
-              <td>
-                <p><a href="https://birds-of-nz.borb.nz/"  target="_blank">Birds of Aotearoa</a></p> <a href="https://github.com/tohora-2025/my-fullstack-collection/tree/lana" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>React, Express, SQLite, Knex, Superagent, Tanstack React Query, TypeScript, Tailwind CSS
-              </td>
-              <td>
-                <p>Full stack, solo project, I built everything (data and images sourced from Otago Uni)</p>
-              </td>
-              <td></td>
-            </tr>
+              <tr>
+                <td>
+                  <p>Duck Duck Cat</p>
+                  <a href="https://github.com/tohora-2025/duck-duck-cat" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>React, Superagent, Tanstack React Query, TypeScript, external API use (front-end)</td>
+                <td>
+                  <p>TW: Sound! This was a one-day group project. I built the cat page (frontend external API - it's a bit slow) and the final boss page.</p>
+                </td>
+                <td>Dev Academy Bootcamp</td>
+              </tr>
 
-            <tr>
-              <td>
-                <p><a href="./lines-game/"  target="_blank">Lines Game</a></p> <a href="https://github.com/Lana-L/lines-game" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>JavaScript, HTML, CSS, deployed to Github pages</td>
-              <td>
-                <p>Plain js/css/html solo project, I built everything (but had help from various arguments with Claude, especially on building the breadth-first search for ball movements... he does hallucinate a lot, so sometimes was no help at all). Added local storage so users can keep track of their high score between game sessions. Sound does not appear to work on iOS Safari</p>
-              </td>
-              <td></td>
-            </tr>
+              <tr>
+                <td>
+                  <p><a href="./javascript-cafe/" target="_blank">Javascript Cafe</a></p>
+                  <a href="https://github.com/Lana-L/javascript-cafe" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>HTML, CSS, and Javascript. Data is stored as an object.</td>
+                <td>
+                  <p>
+                    This was a fun project that taught us to use objects and dynamically populate information on the page. The stretch goals of having a restock button was particularly fun to
+                    implement. Other features include: in-session 'database' of stock and business cash, ability to respond when out of stock, and background music.
+                  </p>
+                </td>
+                <td>Dev Academy Foundations</td>
+              </tr>
 
-            <tr>
-              <td>
-                <p>LL Cool J Fan Club</p><a href="https://github.com/tohora-2025/ll-cool-j" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>React, Express, SQLite, Knex, Superagent, Tanstack React Query, TypeScript, Tailwind CSS
-              </td>
-              <td>
-                <p>This was a one-day group project. I built all the database functions and backend routes, as well as the frontend join form that uses some of those functions.</p>
-              </td>
-              <td>Should come back to this and finalise other parts (such as displaying detail of fans and various search functions) - I built a lot of db functions that we did not get the time to use at the frontend.</td>
-            </tr>
+              <tr>
+                <td>
+                  <p><a href="./javascript-carnival/whack-a-mole/whack-a-mole.html" target="_blank">Whack-a-Mole</a></p>
+                  <a href="https://github.com/Lana-L/javascript-carnival/tree/main/whack-a-mole" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>HTML, CSS, and Javascript</td>
+                <td>
+                  <p>
+                    This started off as another carnival game, but became so much more. What was initially provided was a pre-styled board and an empty JS file. I've used the same logic for displaying
+                    the mole as what I learned in Tic-Tac-Toe - traverse through all the table cells and place the image in a random cell. The cell clicked event is also the same as what was used in
+                    Tic-Tac-Toe. The time attack mode took a lot of learning about setInterval and setTimeout functions. Adding the time attack mode, the timer countdown, and leaderboard were stretch
+                    goals.
+                  </p>
+                  <p>I am particularly proud of the leaderboard and utilised some of the learning from the Javascript Cafe - using objects to store data and displaying them with innerHTML.</p>
+                </td>
+                <td>Dev Academy Foundations</td>
+              </tr>
 
+              <tr>
+                <td>
+                  <p><a href="./tic-tac-toe" target="_blank">Tic-Tac-Toe</a></p>
+                  <a href="https://github.com/Lana-L/tic-tac-toe" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>HTML, CSS, and Javascript</td>
+                <td>
+                  <p>How much simpler can such a game be? Turns out not that easy when you have to code each little bit of it.</p>
+                  <p>
+                    Here we learned how to catch clicks, display objects with a click, play sounds, and keep score. I also spent a lot of time styling this (and then carried over the same styling to
+                    the Mole project) - using CSS Grid Areas made a lot of sense after using them here.
+                  </p>
+                </td>
+                <td>Dev Academy Foundations</td>
+              </tr>
 
-            <tr>
-              <td>
-                <p>Duck Duck Cat</p> <a href="https://github.com/tohora-2025/duck-duck-cat" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>React, Superagent, Tanstack React Query, TypeScript, external API use (front-end)</td>
-              <td>
-                <p>TW: Sound! This was a one-day group project. I built the cat page (frontend external API - it's a bit slow) and the final boss page.</p>
-              </td>
-              <td></td>
-            </tr>
+              <tr>
+                <td>
+                  <p><a href="./Rock-Paper-Scissors/" target="_blank">Rock Paper Scissors</a></p>
+                  <a href="https://github.com/Lana-L/Rock-Paper-Scissors" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>HTML and Javascript</td>
+                <td>
+                  <p>This was a challenge from The Odin Project. Has no styling, but I felt pretty proud of implementing all the score-keeping.</p>
+                </td>
+                <td>The Odin Project</td>
+              </tr>
 
-            <tr>
-              <td>
-                <p><a href="./javascript-cafe/" target="_blank">Javascript Cafe</a> </p>
-                <a href="https://github.com/Lana-L/javascript-cafe" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>HTML, CSS, and Javascript.
-                Data is stored as an object.</td>
-              <td>
-                <p>This was a fun project that taught us to use objects and dynamically populate information on the page. The stretch goals of having a restock button was particularly fun to implement. Other features include: in-session 'database' of stock and business cash, ability to respond when out of stock, and background music.</p>
-              </td>
-              <td>I would still like to come back to this and implement further stretch goals, such as the customer having or not having enough money, customer asking for a refund, transaction history, and also some better styling.</td>
-            </tr>
+              <tr>
+                <td>
+                  <p><a href="./javascript-carnival/dress-the-clown/dress-the-clown.html" target="_blank">Dress the Clown</a></p>
+                  <a href="https://github.com/Lana-L/javascript-carnival/tree/main/dress-the-clown" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>Javascript (all CSS and HTML was provided)</td>
+                <td>
+                  <p>
+                    This is a simple 'game' where you use the keyboard arrow keys to interact with the image. A 'save this image' button is also included, but this was pre-built for us. Main learning
+                    here was how to catch keypress events.
+                  </p>
+                </td>
+                <td>Dev Academy Foundations</td>
+              </tr>
+              <tr>
+                <td>
+                  <p><a href="./javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html" target="_blank">Inflate the Unicorn</a></p>
+                  <a href="https://github.com/Lana-L/javascript-carnival/tree/main/inflate-the-unicorn" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
 
-            <tr>
-              <td>
-                <p><a href="./javascript-carnival/whack-a-mole/whack-a-mole.html" target="_blank">Whack-a-Mole</a></p> 
-                <a href="https://github.com/Lana-L/javascript-carnival/tree/main/whack-a-mole" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>HTML, CSS, and Javascript</td>
-              <td>
-                <p>This started off as another carnival game, but became so much more. What was initially provided was a pre-styled board and an empty JS file. I've used the same logic for displaying the mole as what I learned in Tic-Tac-Toe - traverse through all the table cells and place the image in a random cell. The cell clicked event is also the same as what was used in Tic-Tac-Toe. The time
-                  attack mode took a lot of learning about setInterval and setTimeout functions. Adding the time attack mode, the timer countdown, and leaderboard were stretch goals.</p>
-                <p>I am particularly proud of the leaderboard and utilised some of the learning from the Javascript Cafe - using objects to store data and displaying them with innerHTML.</p>
-              </td>
-              <td></td>
-            </tr>
+                <td>Javascript (all CSS and HTML was provided)</td>
+                <td>
+                  <p>
+                    This is a simple 'game' where you click on the unicorn to inflate its balloon horn. Main learning here was how to catch onclick events (which we already learned in Tic-Tac-Toe),
+                    and to cycle through images to catch the correct clicks.
+                  </p>
+                  <p>A simpler solution may have been to give an ID to each individual unicorn, but I wanted to get this done without changing the HTML that was provided.</p>
+                  <p>Although simple to code, several hours were spent finding the right sounds on the various free sound websites.</p>
+                </td>
+                <td>Dev Academy Foundations</td>
+              </tr>
 
+              <tr>
+                <td>
+                  <p><a href="./DOM-interactions/" target="_blank">DOM Interactions</a></p>
+                  <a href="https://github.com/Lana-L/DOM-interactions" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>Javascript (all CSS and HTML was provided)</td>
+                <td>This was a simple follow-along task that had us learn to interact with the page.</td>
+                <td>Dev Academy Foundations</td>
+              </tr>
 
-            <tr>
-              <td><p><a href="./tic-tac-toe" target="_blank">Tic-Tac-Toe</a></p>
-                <a href="https://github.com/Lana-L/tic-tac-toe" target="_blank"><img src="github-mark.png" style="width: 1vw" /></td>
-              <td>HTML, CSS, and Javascript</td>
-              <td>
-                <p>How much simpler can such a game be? Turns out not that easy when you have to code each little bit of it.</p>
-                <p>Here we learned how to catch clicks, display objects with a click, play sounds, and keep score. I also spent a lot of time styling this (and then carried over the same styling to the Mole project) - using CSS Grid Areas made a lot of sense after using them here.</p>
-              </td>
-              <td>I would like to come back to this one and add an "against the computer" mode. </td>
-            </tr>
-
-            <tr>
-              <td>
-                <p><a href="./Rock-Paper-Scissors/" target="_blank">Rock Paper Scissors</a></p> <a href="https://github.com/Lana-L/Rock-Paper-Scissors" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>HTML and Javascript
-              </td>
-              <td>
-                <p>This was a challenge from The Odin Project. Has no styling, but I felt pretty proud of implementing all the score-keeping.</p>
-              </td>
-              <td>Should come back to it and make it prettier.</td>
-            </tr>
-
- <tr>
-              <td>
-                <p><a href="https://lana-l.github.io/aoc2024/" target="_blank">Advent of Code 2024</a></p> <a href="https://github.com/Lana-L/aoc2024" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>Javascript, HTML, deployed to Github Pages
-              </td>
-              <td>
-                <p>This is one of the Advent of Code challenges. I solved the first two days of the 2024 edition. I built it in JS, so that anyone can add their own input and get an answer. Absolutely no styling.</p>
-              </td>
-              <td>Should come back to it and finish the rest of the challenges and add styling.</td>
-            </tr>
-
-            <tr>
-              <td>
-                <p><a href="https://aoc2022.vercel.app/" target="_blank">Advent of Code 2022</a></p> <a href="https://github.com/Lana-L/aoc2022" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-              <td>Svelte, TypeScript, deployed to Vercel
-              </td>
-              <td>
-                <p>This is one of the Advent of Code challenges. I solved the first six days of the 2022 edition. I built it in Svelte, so that anyone can add their own input and get an answer.</p>
-              </td>
-              <td>Should come back to it and finish the rest of the challenges.</td>
-            </tr>
-
-            <tr>
-              <td><p><a href="./javascript-carnival/dress-the-clown/dress-the-clown.html" target="_blank">Dress the Clown</a></p> <a href="https://github.com/Lana-L/javascript-carnival/tree/main/dress-the-clown" target="_blank"><img src="github-mark.png" style="width: 1vw" /></td>
-              <td>Javascript (all CSS and HTML was provided)</td>
-              <td>
-                <p>This is a simple 'game' where you use the keyboard arrow keys to interact with the image. A 'save this image' button is also included, but this was pre-built for us. Main learning here was how to catch keypress events.</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <p><a href="./javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html" target="_blank">Inflate the Unicorn</a> </p><a href="https://github.com/Lana-L/javascript-carnival/tree/main/inflate-the-unicorn" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
-              </td>
-
-              <td>Javascript (all CSS and HTML was provided)</td>
-              <td>
-                <p>This is a simple 'game' where you click on the unicorn to inflate its balloon horn. Main learning here was how to catch onclick events (which we already learned in Tic-Tac-Toe), and to cycle through images to catch the correct clicks.</p>
-                <p>A simpler solution may have been to give an ID to each individual unicorn, but I wanted to get this done without changing the HTML that was provided.</p>
-                <p>Although simple to code, several hours were spent finding the right sounds on the various free sound websites.</p>
-              </td>
-              <td></td>
-            </tr>
-
-            <tr>
-              <td><p><a href="./DOM-interactions/" target="_blank">DOM Interactions</a></p> <a href="https://github.com/Lana-L/DOM-interactions" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a></td>
-              <td>Javascript (all CSS and HTML was provided)</td>
-              <td>This was a simple follow-along task that had us learn to interact with the page.
-              </td>
-              <td></td>
-            </tr>
-
-            <tr>
-              <td><p><a href="./gemini-ai-project/" target="_blank">Mevo Map App</a></p> <a href="https://github.com/Lana-L/gemini-ai-project" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a></td>
-              <td>Gemini CLI</td>
-              <td>Months after graduating from Dev Academy, they asked some alumni if we could test using Gemini CLI in a group-project setting. Another graduate and I did this using the <a href="https://drive.google.com/file/d/1tWSejm1WCKSxevh8oY1kdr_cUe6R_J7I/view?pli=1" target="_blank">Mevo homework assignment</a>. It took about two hours and neither of us touched the code at all, we were just prompting in the CLI and saying yes or no. The only thing I did manually is create the repo, write the original MD with instructions, and deploy to github pages. It was quite frankly soul destroying and made me feel more like a designer than a programmer (eg, "no, the box now overlaps, move it a bit to the right, remove the padding please, now the map is too skinny, make the cars have a blue outline"). 
-              </td>
-              <td></td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-    </main>
-  </div>
-</body>
-
+              <tr>
+                <td>
+                  <p><a href="./gemini-ai-project/" target="_blank">Mevo Map App</a></p>
+                  <a href="https://github.com/Lana-L/gemini-ai-project" target="_blank"><img src="github-mark.png" style="width: 1vw" /></a>
+                </td>
+                <td>Gemini CLI</td>
+                <td>
+                  Months after graduating from Dev Academy, they asked some alumni if we could test using Gemini CLI in a group-project setting. Another graduate and I did this using the
+                  <a href="https://drive.google.com/file/d/1tWSejm1WCKSxevh8oY1kdr_cUe6R_J7I/view?pli=1" target="_blank">Mevo homework assignment</a>. It took about two hours and neither of us touched
+                  the code at all, we were just prompting in the CLI and saying yes or no. The only thing I did manually is create the repo, write the original MD with instructions, and deploy to
+                  github pages. It was quite frankly soul destroying and made me feel more like a designer than a programmer (eg, "no, the box now overlaps, move it a bit to the right, remove the
+                  padding please, now the map is too skinny, make the cars have a blue outline").
+                </td>
+                <td>Dev Academy AI Coding Essentials</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
