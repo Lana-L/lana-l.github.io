@@ -1,1 +1,1 @@
-[https://lana-l.github.io](https://github.com/Lana-L/lines-game/blob/main/README.md)
+<a href="https://lana-l.github.io/projects.html" target="_blank">https://lana-l.github.io</a>
